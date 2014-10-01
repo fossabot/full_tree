@@ -20,8 +20,8 @@
 /coverage
 
 # config files
-/config/database.yml
-/config/secrets.yml
+#/config/database.yml
+#/config/secrets.yml
 
 /.idea
 /*.iml
