@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @listing.user_id %>
+</p>
+
+<p>
+  <strong>Community:</strong>
+  <%= @listing.community_id %>
+</p>
+
+<p>
+  <strong>Listing type:</strong>
+  <%= @listing.listing_type_id %>
+</p>
+
+<p>
+  <strong>Listing category:</strong>
+  <%= @listing.listing_category_id %>
+</p>
+
+<p>
+  <strong>Share type:</strong>
+  <%= @listing.share_type_id %>
+</p>
+
+<p>
+  <strong>Share category:</strong>
+  <%= @listing.share_category_id %>
+</p>
+
+<p>
+  <strong>Txn terms:</strong>
+  <%= @listing.txn_terms %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @listing.description %>
+</p>
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>

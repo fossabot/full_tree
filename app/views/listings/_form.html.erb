@@ -1,0 +1,76 @@
+<%= form_for @listing, html: {class: 'form-horizontal', role: 'form'} do |f| %>
+  <% if @listing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
+
+      <ul>
+      <% @listing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class='form-group'>
+    <%= f.label :user_id, class: 'col-lg-2 control-label' %>
+    <div class='col-lg-4'>
+        <%= collection_select(:listing, :user_id, User.all, :id, :name, {include_blank: false}, class: 'form-control') %>
+    </div>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :community_id, class: 'col-lg-2 control-label' %>
+    <div class='col-lg-4'>
+        <%= collection_select(:listing, :community_id, Community.all, :id, :name, {include_blank: false}) %>
+    </div>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :listing_type_id, class: 'col-lg-2 control-label' %>
+    <div class='col-lg-4'>
+        <%= collection_select(:listing, :listing_type_id, ListingType.all, :id, :name, {include_blank: false}) %>
+    </div>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :listing_category_id, class: 'col-lg-2 control-label' %>
+    <div class='col-lg-4'>
+        <%= collection_select(:listing, :listing_category_id, ListingCategory.all, :id, :name, {include_blank: false}) %>
+    </div>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :share_type_id, class: 'col-lg-2 control-label' %>
+    <div class='col-lg-4'>
+        <%= collection_select(:listing, :share_type_id, ShareType.all, :id, :name, {include_blank: false}) %>
+    </div>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :share_category_id, class: 'col-lg-2 control-label' %>
+    <div class='col-lg-4'>
+        <%= collection_select(:listing, :share_category_id, ShareCategory.all, :id, :name, {include_blank: false}) %>
+    </div>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :txn_terms, class: 'col-lg-2 control-label' %>
+    <div class='col-lg-4'>
+        <%= f.text_field :txn_terms %>
+    </div>
+  </div>
+
+  <div class='form-group col-lg-4'>
+    <%= f.label :description, class: 'col-lg-3 control-label' %>
+    <div class='col-lg-4'>
+        <%= f.text_area :description %>
+    </div>
+  </div>
+
+    <div class="form-group">
+      <div class="col-lg-offset-1 col-lg-10">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+<% end %>
