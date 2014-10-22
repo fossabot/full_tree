@@ -1,0 +1,23 @@
+
+
+<div id='offerings' class='active'>
+  <table class='table table-striped'>
+    <tbody>
+    <% @offerings.each do |listing| %>
+        <tr>
+          <td><%= listing.listing_category.name %></td>
+          <td><%= link_to listing.title, listing %></td>
+          <td><%= listing.listing_type.name %></td>
+          <td><%= listing.user_id %></td>
+          <td><%= listing.community.name %></td>
+
+          <!--
+                <td><%#= link_to 'Show', listing %></td>
+                <td><%#= link_to 'Edit', edit_listing_path(listing) %></td>
+                <td><%#= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                -->
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
