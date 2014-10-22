@@ -8,77 +8,9 @@
 
 
 <div id='listings'>
-    <div id='offerings' class='active'>
-        <table class='table'>
-          <thead>
-            <tr>
-              <th>User</th>
-              <th>Community</th>
-              <th>Listing type</th>
-              <th>Listing category</th>
-              <th>Share type</th>
-              <th>Share category</th>
-              <th>Txn terms</th>
-              <th>Description</th>
-              <th colspan="3"></th>
-            </tr>
-          </thead>
+    <%= render 'listings/listings' %>
 
-          <tbody>
-            <% @offerings.each do |listing| %>
-              <tr>
-                <td><%= listing.user_id %></td>
-                <td><%= listing.community_id %></td>
-                <td><%= listing.listing_type_id %></td>
-                <td><%= listing.listing_category_id %></td>
-                <td><%= listing.share_type_id %></td>
-                <td><%= listing.share_category_id %></td>
-                <td><%= listing.txn_terms %></td>
-                <td><%= listing.description %></td>
-                <td><%= link_to 'Show', listing %></td>
-                <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-                <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-    </div>
-
-    <div id='wanted'>
-        <table class='table'>
-          <thead>
-          <tr>
-            <th>User</th>
-            <th>Community</th>
-            <th>Listing type</th>
-            <th>Listing category</th>
-            <th>Share type</th>
-            <th>Share category</th>
-            <th>Txn terms</th>
-            <th>Description</th>
-            <th colspan="3"></th>
-          </tr>
-          </thead>
-
-          <tbody>
-          <% @wanted.each do |listing| %>
-              <tr>
-                <td><%= listing.user_id %></td>
-                <td><%= listing.community_id %></td>
-                <td><%= listing.listing_type_id %></td>
-                <td><%= listing.listing_category_id %></td>
-                <td><%= listing.share_type_id %></td>
-                <td><%= listing.share_category_id %></td>
-                <td><%= listing.txn_terms %></td>
-                <td><%= listing.description %></td>
-                <td><%= link_to 'Show', listing %></td>
-                <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-                <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
-          <% end %>
-          </tbody>
-        </table>
-    </div>
+    <%= render 'listings/wanted' %>
 </div>
 
 <br>
